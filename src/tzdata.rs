@@ -50,9 +50,9 @@ struct IndexEntry<'a> {
 }
 
 pub(super) fn find_file() -> Result<File, io::Error> {
-    for location in TZDATA_LOCATIONS {
+    for location in &TZDATA_LOCATIONS {
         if let Ok(env_value) = std::env::var(location.env_var) {
-            if let Ok(file) = File::open(format!("{env_value}{}tzdata", location.path)) {
+            if let Ok(file) = File::open(format!("{}{}tzdata", env_value, location.path)) {
                 return Ok(file);
             }
         }
