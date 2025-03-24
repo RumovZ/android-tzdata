@@ -12,4 +12,4 @@ keywords = ["parser", "android", "timezone"]
 include = ["src/**/*", "LICENSE-*", "README.md"]
 
 [dev-dependencies]
-zip = "0.6.4"
+zip = "2"
